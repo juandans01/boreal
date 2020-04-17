@@ -7,9 +7,10 @@ import { theme } from './utils/theme'
 import { refresh } from './utils/auth'
 
 const Wrapper = styled.div`
-  font-family: "Lato", sans-serif;
-  background-image: #FFFFFE;
-  height: 100%;
+  font-family: 'Nunito Sans', sans-serif;
+  background: #201C43;
+  width: 100%;
+  height: 100vh;
 `
 
 const defaultAuthState = {

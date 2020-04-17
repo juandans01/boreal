@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { authenticate } from '../../../utils/auth'
 import SpotifyAuth from './components/SpotifyAuth'
 import AuthContext from '../../../components/AuthContext'
+import Wrapper from '../../../components/Wrapper'
 
 const Auth = (props) => {
   
@@ -18,40 +19,46 @@ const Auth = (props) => {
 
   return (
     <Wrapper>      
-      <Background>
+      <Card>
         <Content>
           <Title>Boreal</Title>
+          <Subtitle>shared playlist for all</Subtitle>
           <SpotifyAuth/>
         </Content>
-      </Background>
+      </Card>
     </Wrapper>
   )
 }
 
-const Wrapper = styled.div`  
-  height: 100vh;
+const Card = styled.div`
+  border-radius: 5px;
+  background: white;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  max-width: 30vw;
 `
 
 const Title = styled.div`
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 900;
+`
+
+const Subtitle = styled.div`
+  padding: 1rem 2rem;
   font-size: 2rem;
+  text-align: center;
+  font-weight: 900;
   margin-bottom: 1rem;
 `
 
 const Content = styled.div`  
-  background: white;
-  border 2px solid ${props => props.theme.text};
-  border-radius: 4px;
-  padding: 2rem 4rem;
-  
-`
-
-const Background = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to right, ${props => props.theme.primary}, ${props => props.theme.secondary});
 `
 
 export default Auth
