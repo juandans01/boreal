@@ -7,8 +7,12 @@ const authenticate = async(code, dispatch, history = null) => {
   const data = {
     "grant_type": 'authorization_code',
     "code": code,
-    "redirect_uri": 'http://localhost:3000/login'
+    "redirect_uri": 'http://localhost:3000/login',
+    "scope": "user-read-private user-read-email"
   }
+  
+  dispatch({type: 'request'})
+
   try {
     const res = await axios.post('https://accounts.spotify.com/api/token', qs.stringify(data),{
       headers: {
@@ -18,6 +22,7 @@ const authenticate = async(code, dispatch, history = null) => {
     })
 
     if (res.status === 200) {
+      console.log('here')
       window.localStorage.clear()
       window.localStorage.setItem('access_token', res.data.access_token)
       window.localStorage.setItem('refresh_token', res.data.refresh_token)      
@@ -46,6 +51,7 @@ const refresh = async(token, dispatch) => {
     refresh_token: token
   }
 
+  dispatch({type: 'request'})
   try {
     const res = await axios.post('https://accounts.spotify.com/api/token', qs.stringify(data), {
       headers: {

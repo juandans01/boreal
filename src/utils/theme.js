@@ -4,5 +4,6 @@ export const theme = {
   third: "#FBDD74",
   text: "#181818",
   background: "#FFFFFE",
-  body: "#FFFFFE"
+  body: "#FFFFFE",
+  spotify: "#1DB954"
 }

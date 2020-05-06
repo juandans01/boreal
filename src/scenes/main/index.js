@@ -16,8 +16,12 @@ class Main extends Component {
       window.location = '/'
     }
   }
-
+  
   render(){
+
+    console.log('on render')
+    console.log(this.props.auth)
+
     return (
       <Router>
         <Switch>        

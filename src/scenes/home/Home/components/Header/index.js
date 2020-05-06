@@ -1,13 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
+import Menu from '../Menu'
 
 const Header = () => {
   return (
-    <div>
+    <Wrapper>
       <Title>Boreal</Title>
-    </div>
+      <Menu />
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
 
 const Title = styled.div`
   font-size: 2.5rem;

@@ -5,8 +5,6 @@ class SpotifyAuth extends Component {
 
   redirect = () => {
     const redirect = 'http://localhost:3000/login'
-
-    //TODO state param validation
     const params = `?client_id=${process.env.REACT_APP_SPOTIFY_CLIENT}&response_type=code&redirect_uri=${redirect}`    
     window.location = `https://accounts.spotify.com/authorize${params}`
   }
