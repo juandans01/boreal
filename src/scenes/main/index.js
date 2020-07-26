@@ -11,6 +11,15 @@ import Home from '../home/Home'
 
 class Main extends Component {
 
+  componentDidMount(){
+    const refreshToken = window.localStorage.getItem('refresh_token', null)
+    if (!refreshToken || refreshToken === 'undefined') {
+      if (!this.props.auth.loading && !this.props.auth.authenticated && window.location.pathname !== '/login') {
+        window.location = '/login'
+      }       
+    }
+  }
+
   componentDidUpdate(prevProps){
     if (!prevProps.auth.authenticated && this.props.auth.authenticated && window.location.pathname === '/login') {
       window.location = '/'
@@ -18,9 +27,6 @@ class Main extends Component {
   }
   
   render(){
-
-    console.log('on render')
-    console.log(this.props.auth)
 
     return (
       <Router>

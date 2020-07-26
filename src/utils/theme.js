@@ -1,9 +1,12 @@
 export const theme = {
-  primary: "#4FC4CF",
-  secondary: "#994FF3",
+  primary: "#ff2975",
+  secondary: "#201C43",
   third: "#FBDD74",
   text: "#181818",
   background: "#FFFFFE",
   body: "#FFFFFE",
-  spotify: "#1DB954"
+  spotify: "#1DB954",
+  fonts: {
+    input: 'Roboto'
+  }
 }

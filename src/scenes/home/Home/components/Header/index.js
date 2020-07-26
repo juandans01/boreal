@@ -19,8 +19,9 @@ const Wrapper = styled.div`
 
 const Title = styled.div`
   font-size: 2.5rem;
-  padding: 1rem;
+  padding: 1rem 0;
   font-weight: 900;
+  color: white;
 `
 
 export default Header

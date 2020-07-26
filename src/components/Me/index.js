@@ -9,7 +9,7 @@ const fetchMe = async(handleMe, handleShow) => {
       Authorization: `Bearer ${window.localStorage.getItem('access_token')}`
     }
   })
-  console.log(res.data)
+  
   if (res.status === 200) {
     handleMe(res.data)
     setTimeout(() => {

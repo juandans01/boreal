@@ -7,11 +7,11 @@ import { theme } from './utils/theme'
 import { refresh } from './utils/auth'
 
 const Wrapper = styled.div`
-  font-family: 'Nunito Sans', sans-serif;
-  background: #201C43;
+  font-family: 'Nunito Sans', sans-serif;  
   width: 100%;
-  height: 100vh;
+  display: flex;
 `
+  // 1height: 100vh;
 
 const defaultAuthState = {
   authenticated: false,
